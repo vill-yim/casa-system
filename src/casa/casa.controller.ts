@@ -4,7 +4,7 @@ import { CreateCasaDto } from './dto/create-casa.dto';
 import { UpdateCasaDto } from './dto/update-casa.dto';
 import { get } from 'http';
 
-@Controller('casa')
+@Controller('casas')
 export class CasaController {
   constructor(private readonly casaService: CasaService) {}
 
@@ -13,7 +13,7 @@ export class CasaController {
     return this.casaService.create(createCasaDto);
   }
 
-@Get('casas')
+@Get()
 async getCasas(){
 const casas = await  this.casaService.getCasa()
 return String(casas)
