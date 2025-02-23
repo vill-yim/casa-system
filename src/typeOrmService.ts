@@ -12,7 +12,7 @@ createTypeOrmOptions(connectionName?: string): Promise<TypeOrmModuleOptions> | T
     return {
         type: 'postgres',
         url:this.configService.get<string>('URL_DATABASE'),
-        entities: [Casa],
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
     }
 }
