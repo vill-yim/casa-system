@@ -11,7 +11,7 @@ constructor(private readonly configService:ConfigService){}
 createTypeOrmOptions(connectionName?: string): Promise<TypeOrmModuleOptions> | TypeOrmModuleOptions {
     return {
         type: 'postgres',
-        url:this.configService.get<string>('URL_DATABASE'),
+        url:  this.configService.get<string>('URL_DATABASE'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
     }
